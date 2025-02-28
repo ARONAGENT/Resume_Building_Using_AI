@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body style="margin-top: 35px;">
+
+    <div class="container">
+        <div class="shadow-lg p-4 mb-5 bg-body-tertiary rounded">
+
+        <div >
+            <a href="/"><button class="btn-custom">Home</button></a>
+
+            <h2 class="text-center mb-4">Resume Builder</h2>
+            <form method="POST" action="/resumereq/" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row g-3">
+                    
+                    <!-- Left Column -->
+                    <div class="col-md-6">
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" name="name" class="form-control" required autocomplete="off">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" name="email" class="form-control" required autocomplete="off">
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="text" name="phone" class="form-control" required autocomplete="off">
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="mb-3">
+                            <label class="form-label">Skills</label>
+                            <textarea name="skills" class="form-control" rows="2" required autocomplete="off"></textarea>
+                        </div>
+
+                        <!-- Experience -->
+                        <div class="mb-3">
+                            <label class="form-label">Experience</label>
+                            <textarea name="experience" class="form-control" rows="3" required autocomplete="off"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="col-md-6">
+                        <!-- Upload Profile Image -->
+                        <div class="mb-3">
+                            <label class="form-label">Upload Passport Image (Max: 10MB)</label>
+                            <input type="file" name="profile_image" accept="image/*" class="form-control" required autocomplete="off">
+                        </div>
+
+                        <!-- Resume Type -->
+                        <div class="mb-3">
+                            <label class="form-label">Resume Type</label>
+                            <select name="resume_type" class="form-select" required>
+                                <option value="Professional">Professional</option>
+                                <option value="Creative">Creative</option>
+                                <option value="Simple">Simple</option>
+                                <option value="Modern">Modern</option>
+                            </select>
+                        </div>
+
+                        <!-- Preferred Company -->
+                        <div class="mb-3">
+                            <label class="form-label">Which company do you want to work at?</label>
+                            <input type="text" name="company" class="form-control" required autocomplete="off">
+                        </div>
+
+                        <!-- Resume Language -->
+                        <div class="mb-3">
+                            <label class="form-label">Preferred Resume Language</label>
+                            <select name="resume_language" class="form-select" required>
+                                <option value="English">English</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="French">French</option>
+                                <option value="German">German</option>
+                            </select>
+                        </div>
+
+                        <!-- Education -->
+                        <div class="mb-3">
+                            <label class="form-label">Education</label>
+                            <textarea name="education" class="form-control" rows="3" required autocomplete="off"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn-custom btn-lg">Generate Resume</button>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
