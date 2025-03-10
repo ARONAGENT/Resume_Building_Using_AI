@@ -78,14 +78,8 @@ Open your browser and visit:
 
 ---
 
-## Contributing
-If you'd like to contribute, feel free to submit a pull request or open an issue.
-
-## License
-This project is licensed under the MIT License.
-
 ## Author
-**Your Name** - [GitHub](https://github.com/ARONAGENT)
+**Your Name** - [ARON](https://github.com/ARONAGENT)
 
 ---
 
